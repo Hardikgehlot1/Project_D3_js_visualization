@@ -75,7 +75,8 @@ function buildChart(id) {
             mode: 'markers',
             marker: {
                 color: newdata4,
-                size: newdata5
+                size: newdata5,
+                colorscale: "Earth"
             }
 
 
