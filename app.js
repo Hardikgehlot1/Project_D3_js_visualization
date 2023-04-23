@@ -61,23 +61,24 @@ function buildChart(id) {
         let newdata4 = result2.otu_ids;
         let newdata5 = result2.sample_values;
         let newdata6 = result2.otu_labels;
-       
+
 
         let trace1 = {
             x: newdata4,
             y: newdata5,
-            text:newdata6,
+            text: newdata6,
             mode: 'markers',
             marker: {
                 color: newdata4,
-                size: newdata5
+                size: newdata5,
+                colorscale: "Earth"
             }
 
 
         };
-        let data1=[trace1];
-        let layout={
-            title:"Belly Button Biodiversity",
+        let data1 = [trace1];
+        let layout = {
+            title: "Belly Button Biodiversity",
             showlegend: false,
             height: 600,
             width: 1200
@@ -85,7 +86,7 @@ function buildChart(id) {
         Plotly.newPlot('bubble', data1, layout);
 
     });
-    
+
 };
 
 function optionChanged(id) {
