@@ -67,6 +67,7 @@ function buildChart(id) {
         let newdata4 = result2.otu_ids;
         let newdata5 = result2.sample_values;
         let newdata6 = result2.otu_labels;
+       
 
         let trace1 = {
             x: newdata4,
@@ -75,7 +76,8 @@ function buildChart(id) {
             mode: 'markers',
             marker: {
                 color: newdata4,
-                size: newdata5
+                size: newdata5,
+                colorscale: "Earth"
             }
 
 
@@ -88,16 +90,6 @@ function buildChart(id) {
             width: 1200
         };
         Plotly.newPlot('bubble', data1, layout);
-
-
-
-
-
-
-
-
-
-
 
     });
     //console.log(id)
