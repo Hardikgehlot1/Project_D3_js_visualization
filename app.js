@@ -1,18 +1,12 @@
 const url = "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json";
 
-//let data = d3.json(url).then(function(data){
-
-
-//});
-
-//let sorteddata = data.sort((a, b) => b.sample_values - a.sample_values);
 function init() {
     d3.json(url).then(function (data) {
         let dropdown = d3.select("#selDataset")
         const names = data.names
         for (let i = 0; i < names.length; i++) {
             dropdown.append("option").text(names[i]).property("value", names[i])
-        }
+        };
 
         buildChart(names[0]);
         console.log(data);
@@ -27,7 +21,7 @@ function buildChart(id) {
         let metadata = data.metadata;
         function findthemetadataid(o) {
             return o.id == id;
-        }
+        };
         let results = metadata.filter(findthemetadataid);
 
         // Print to console
@@ -42,7 +36,7 @@ function buildChart(id) {
         function findsample(o) {
             return o.id == id;
 
-        }
+        };
         let result_2 = samples.filter(findsample);
         let result2 = result_2[0]
         //console.log(result2[0])
@@ -92,11 +86,12 @@ function buildChart(id) {
         Plotly.newPlot('bubble', data1, layout);
 
     });
-    //console.log(id)
-}
+    
+};
 
 function optionChanged(id) {
     buildChart(id);
 
 }
-init()
+
+init();
